@@ -75,65 +75,70 @@
 
 本課程的程式碼與文檔將依循以下重新設計的結構進行組織，以反映從基礎到進階的完整學習路徑。
 
-`PINNs-course/`
-`├── 00-Course_Setup/`
-`│   ├── README.md`
-`│   └── pyproject.toml`
-`│`
-`├── 01-PINN_Core_Concepts/`
-`│   ├── README.md`
-`│   └── 1.1-Simple_ODE_Example/`
-`│       ├── README.md`
-`│       └── simple_ode.py`
-`│`
-`├── 02-Standard_PINNs_for_Forward_Problems/`
-`│   ├── README.md`
-`│   ├── 2.1-Parabolic_PDE-1D_Heat_Equation/`
-`│   │   ├── README.md`
-`│   │   └── heat_equation.py`
-`│   ├── 2.2-Elliptic_PDE-2D_Poisson_Equation/`
-`│   │   ├── README.md`
-`│   │   └── poisson_equation.py`
-`│   └── 2.3-Nonlinear_PDE-1D_Burgers_Equation/`
-`│       ├── README.md`
-`│       └── burgers_equation.py`
-`│`
-`├── 03-Advanced_Applications-Inverse_Problems/`
-`│   ├── README.md`
-`│   └── 3.1-Heat_Equation_Parameter_Discovery/`
-`│       ├── README.md`
-`│       └── heat_inverse.py`
-`│`
-`├── 04-Optimization_Challenges_and_Solutions/`
-`│   ├── README.md`
-`│   ├── 4.1-Theory-Gradient_Pathologies/`
-`│   │   └── README.md`
-`│   ├── 4.2-Adaptive_Weights-SA-PINN/`
-`│   │   ├── README.md`
-`│   │   └── sa_pinn_example.py`
-`│   ├── 4.3-Variational_Formulation-VPINN/`
-`│   │   ├── README.md`
-`│   │   └── vpinn_example.py`
-`│   └── 4.4-Discontinuous_Solutions-cPINN/`
-`│       ├── README.md`
-`│       └── cpinn_example.py`
-`│`
-`├── 05-Specialized_and_Frontier_Topics/`
-`│   ├── README.md`
-`│   ├── 5.1-Theory-Advanced_Loss_Functions/`
-`│   │   └── README.md`
-`│   └── 5.2-Example-Gradient_Enhanced_PINN/`
-`│       ├── README.md`
-`│       └── gpinn_example.py`
-`│`
-`├── 06-Capstone_Project-Navier_Stokes/`
-`│   ├── README.md`
-`│   └── 6.1-2D_Lid_Driven_Cavity_Flow/`
-`│       ├── README.md`
-`│       └── navier_stokes.py`
-`│`
-`├── Utils/`
-`│   ├── README.md`
-`│   └── plotters.py`
-`│`
-`└── README.md`
+```
+PINNs-course/
+├── 00-Course_Setup/
+│   ├── README.md
+│   └── pyproject.toml
+│
+├── 01-PINN_Core_Concepts/
+│   ├── README.md
+│   └── 1.1-Simple_ODE_Example/
+│       ├── README.md
+│       └── simple_ode.py
+│
+├── 02-Standard_PINNs_for_Forward_Problems/
+│   ├── README.md
+│   ├── 2.1-Parabolic_PDE-1D_Heat_Equation/
+│   │   ├── README.md
+│   │   └── heat_equation.py
+│   ├── 2.2-Elliptic_PDE-2D_Poisson_Equation/
+│   │   ├── README.md
+│   │   └── poisson_equation.py
+│   └── 2.3-Nonlinear_PDE-1D_Burgers_Equation/
+│       ├── README.md
+│       └── burgers_equation.py
+│
+├── 03-Advanced_Applications-Inverse_Problems/
+│   ├── README.md
+│   └── 3.1-Heat_Equation_Parameter_Discovery/
+│       ├── README.md
+│       └── heat_inverse.py
+│
+├── 04-Optimization_Challenges_and_Solutions/
+│   ├── README.md
+│   ├── 4.1-Theory-Gradient_Pathologies/
+│   │   └── README.md
+│   ├── 4.2-Strategy-Adam_and_LBFGS/
+│   │   ├── README.md
+│   │   └── optimization_strategy_example.py
+│   ├── 4.3-Adaptive_Weights-SA-PINN/
+│   │   ├── README.md
+│   │   └── sa_pinn_example.py
+│   ├── 4.4-Variational_Formulation-VPINN/
+│   │   ├── README.md
+│   │   └── vpinn_example.py
+│   └── 4.5-Discontinuous_Solutions-cPINN/
+│       ├── README.md
+│       └── cpinn_example.py
+│
+├── 05-Specialized_and_Frontier_Topics/
+│   ├── README.md
+│   ├── 5.1-Theory-Advanced_Loss_Functions/
+│   │   └── README.md
+│   └── 5.2-Example-Gradient_Enhanced_PINN/
+│       ├── README.md
+│       └── gpinn_example.py
+│
+├── 06-Capstone_Project-Navier_Stokes/
+│   ├── README.md
+│   └── 6.1-2D_Lid_Driven_Cavity_Flow/
+│       ├── README.md
+│       └── navier_stokes.py
+│
+├── Utils/
+│   ├── README.md
+│   └── plotters.py
+│
+└── README.md
+```
