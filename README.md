@@ -77,17 +77,17 @@
 
 ```
 PINNs-course/
-├── 00-Course_Setup/
+├── 00-Course_Setup/                     # 課程設定 (環境與依賴)
 │   ├── README.md
 │   └── pyproject.toml
 │
-├── 01-PINN_Core_Concepts/
+├── 01-PINN_Core_Concepts/              # PINN 核心概念 (理論基礎與簡單 ODE 實作)
 │   ├── README.md
 │   └── 1.1-Simple_ODE_Example/
 │       ├── README.md
 │       └── simple_ode.py
 │
-├── 02-Standard_PINNs_for_Forward_Problems/
+├── 02-Standard_PINNs_for_Forward_Problems/ # 標準 PINN 實戰 (正向問題求解)
 │   ├── README.md
 │   ├── 2.1-Parabolic_PDE-1D_Heat_Equation/
 │   │   ├── README.md
@@ -99,13 +99,13 @@ PINNs-course/
 │       ├── README.md
 │       └── burgers_equation.py
 │
-├── 03-Advanced_Applications-Inverse_Problems/
+├── 03-Advanced_Applications-Inverse_Problems/ # 進階應用 (反向問題與參數發現)
 │   ├── README.md
 │   └── 3.1-Heat_Equation_Parameter_Discovery/
 │       ├── README.md
 │       └── heat_inverse.py
 │
-├── 04-Optimization_Challenges_and_Solutions/
+├── 04-Optimization_Challenges_and_Solutions/ # 優化挑戰與解決方案
 │   ├── README.md
 │   ├── 4.1-Theory-Gradient_Pathologies/
 │   │   └── README.md
@@ -122,7 +122,7 @@ PINNs-course/
 │       ├── README.md
 │       └── cpinn_example.py
 │
-├── 05-Specialized_and_Frontier_Topics/
+├── 05-Specialized_and_Frontier_Topics/     # 特殊化與前沿主題
 │   ├── README.md
 │   ├── 5.1-Theory-Advanced_Loss_Functions/
 │   │   └── README.md
@@ -130,13 +130,13 @@ PINNs-course/
 │       ├── README.md
 │       └── gpinn_example.py
 │
-├── 06-Capstone_Project-Navier_Stokes/
+├── 06-Capstone_Project-Navier_Stokes/      # 畢業專案 (納維-斯托克斯方程式)
 │   ├── README.md
 │   └── 6.1-2D_Lid_Driven_Cavity_Flow/
 │       ├── README.md
 │       └── navier_stokes.py
 │
-├── Utils/
+├── Utils/                                # 共用工具 (繪圖等)
 │   ├── README.md
 │   └── plotters.py
 │
