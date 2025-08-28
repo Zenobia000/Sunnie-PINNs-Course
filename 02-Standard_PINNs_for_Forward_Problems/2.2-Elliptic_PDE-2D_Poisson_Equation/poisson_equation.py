@@ -35,13 +35,17 @@ def pde(x, u):
     
     # Source function f(x, y)
     x_coord, y_coord = x[:, 0:1], x[:, 1:2]
-    source = -2 * np.pi**2 * np.sin(np.pi * x_coord) * np.sin(np.pi * y_coord)
+    source = -2 * np.pi**2 * dde.backend.sin(np.pi * x_coord) * dde.backend.sin(np.pi * y_coord)
     
     return laplacian - source
 
-# Analytical solution for validation
+# 用於驗證的解析解
 def analytical_solution(x):
-    return np.sin(np.pi * x[:, 0:1]) * np.sin(np.pi * x[:, 1:2])
+    # 根據輸入類型，選擇使用 np.sin 或 dde.backend.sin
+    # dde.data.PDE 會傳入 NumPy 陣列，而模型內部會使用 Tensors
+    # When called from dde.data.PDE, x is a NumPy array.
+    sin = np.sin
+    return sin(np.pi * x[:, 0:1]) * sin(np.pi * x[:, 1:2])
 
 # 3. Define Boundary Conditions
 # The on_boundary method of the geometry object conveniently identifies all boundary points.
@@ -64,10 +68,10 @@ net = dde.nn.FNN([2] + [50] * 3 + [1], "tanh", "Glorot normal")
 model = dde.Model(data, net)
 
 # Compile with Adam optimizer and a learning rate of 1e-3
-model.compile("adam", lr=1e-3)
+model.compile("adam", lr=1e-3, metrics=["l2 relative error"])
 
 # Train the model for 20000 iterations
-losshistory, train_state = model.train(iterations=20000)
+losshistory, train_state = model.train(iterations=20000, display_every=1000)
 
 # Plot loss history
 dde.plot.plot_loss_history(losshistory)
