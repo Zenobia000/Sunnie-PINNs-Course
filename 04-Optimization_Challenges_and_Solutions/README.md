@@ -33,6 +33,14 @@ This module is structured to first provide a theoretical foundation for these ch
     -   **Sub-module**: `4.4-Discontinuous_Solutions-cPINN`
     -   **Concept**: Address problems with shockwaves or sharp discontinuities, where the strong form of the PDE is ill-defined. Conservative PINNs (cPINNs) use a domain decomposition approach inspired by finite volume methods to enforce physical conservation laws across interfaces.
 
+5.  **Solution 4: First-Order System Formulation (FO-PINN)**:
+    -   **Sub-module**: `4.5-First_Order_System-FO-PINN`
+    -   **Concept**: Reformulate high-order PDEs into a coupled system of first-order (or lower-order) equations. This avoids the high computational cost and instability associated with high-order automatic differentiation.
+
+6.  **Solution 5: Bayesian Uncertainty Quantification (BPINN)**:
+    -   **Sub-module**: `4.6-Bayesian_PINN-BPINN`
+    -   **Concept**: Employ Bayesian inference to quantify the uncertainty in the PINN's predictions and any discovered parameters. This provides not just a single solution, but a probability distribution over possible solutions.
+
 ## 4. Next Steps
 
 We will begin by delving into the theory of gradient pathologies to build a solid understanding of the problem before proceeding to implement the various advanced PINN solutions.

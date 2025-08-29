@@ -39,11 +39,11 @@ def pde(x, u):
     
     return laplacian - source
 
-# 用於驗證的解析解
+# Analytical solution for validation
 def analytical_solution(x):
-    # 根據輸入類型，選擇使用 np.sin 或 dde.backend.sin
-    # dde.data.PDE 會傳入 NumPy 陣列，而模型內部會使用 Tensors
-    # When called from dde.data.PDE, x is a NumPy array.
+    # This function provides the analytical solution for validation.
+    # When called by dde.data.PDE for data generation, 'x' is a NumPy array,
+    # so we must use np.sin. In other contexts (e.g., model internals), 'x' might be a Tensor.
     sin = np.sin
     return sin(np.pi * x[:, 0:1]) * sin(np.pi * x[:, 1:2])
 

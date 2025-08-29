@@ -39,4 +39,4 @@ A typical VPINN implementation involves:
     \]
     (This is an example for the Poisson equation after integration by parts).
 
-Due to the complexity of implementing numerical integration within `DeepXDE`'s standard workflow, the accompanying `vpinn_example.py` will focus on conceptually illustrating the idea. It will solve a problem where the VPINN formulation is particularly advantageous and highlight the differences in the required derivatives compared to a standard PINN.
+Due to the complexity of implementing numerical integration within `DeepXDE`'s standard workflow, this section focuses on the theoretical advantages of the weak form formulation for improving training stability and handling complex boundary conditions. An example of a related technique, First-Order System Formulation (FO-PINN), which also reduces derivative orders, is provided in section 4.5.

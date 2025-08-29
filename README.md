@@ -17,7 +17,7 @@
 
 ## 課程大綱
 
-### Part 1: 第一原理 (First Principles) - 構成 PINNs 的基石
+### Part 0: 第一原理 (First Principles) - 構成 PINNs 的基石
 
 本部分將回歸問題的本質，介紹構成 PINNs 的兩大核心基礎：物理定律（微分方程）與神經網絡。
 
@@ -30,7 +30,7 @@
     *   萬能逼近定理 (Universal Approximation Theorem) 的直觀理解。
     *   如何利用神經網絡 `u_θ(x, t)` 來表示一個連續函數（方程的解）。
 
-### Part 2: PINN 核心概念 (Core Concepts)
+### Part 1: PINN 核心概念 (Core Concepts)
 
 本部分將介紹 PINN 的基礎，闡述其如何將物理定律嵌入神經網路，並解析其損失函數的通用結構。
 
@@ -39,7 +39,7 @@
 3.  **自動微分的角色**：實現無網格計算的關鍵技術。
 4.  **基礎實作**：以一個簡單的常微分方程（ODE）為例，展示 PINN 的基本工作流程。
 
-### Part 3: 標準 PINNs 實戰：正向問題求解 (Forward Problems)
+### Part 2: 標準 PINNs 實戰：正向問題求解 (Forward Problems)
 
 本部分將應用標準的 PINN 框架來求解幾個經典的偏微分方程（PDEs）。
 
@@ -47,23 +47,25 @@
 2.  **橢圓型 PDE**：以二維泊松方程為例，學習處理複雜邊界條件。
 3.  **非線性 PDE**：以一維伯格斯方程為例，探討非線性項 `u*u_x` 帶來的挑戰。
 
-### Part 4: 進階應用：反向問題 (Inverse Problems)
+### Part 3: 進階應用：反向問題 (Inverse Problems)
 
 本部分將展示 PINN 在數據同化與參數辨識中的強大能力。
 
 1.  **問題定義**：如何利用稀疏觀測數據反推未知的物理參數。
 2.  **案例研究**：從帶噪聲的溫度數據中，反向推斷熱傳導方程的擴散係數 `α`。
 
-### Part 5: 優化挑戰與解決方案 (Optimization Challenges & Solutions)
+### Part 4: 優化挑戰與解決方案 (Optimization Challenges & Solutions)
 
 本部分將深入探討 PINN 訓練困難的根源，並介紹為克服這些挑戰而設計的先進框架。
 
 1.  **挑戰根源**：梯度戰爭、病態條件與神經網路的「頻譜偏置」。
 2.  **解決方案一 (動態權重)**：用於處理剛性問題的自適應 PINNs (SA-PINNs)。
-3.  **解決方案二 (馴服導數)**：利用變分弱形式改善穩定性的 VPINNs。
+3.  **解決方案二 (弱式公式)**：利用變分弱形式改善穩定性的 VPINNs。
 4.  **解決方案三 (捕捉不連續性)**：為求解帶有激波的守恆律而設計的 cPINNs。
+5.  **解決方案四 (降階系統)**：將高階 PDE 轉為一階系統以規避高階導數問題的 FO-PINNs。
+6.  **解決方案五 (不確定性量化)**：引入貝葉斯方法進行不確定性分析的 BPINNs。
 
-### Part 6: 專門化與前沿主題 (Specialized & Advanced Topics)
+### Part 5: 專門化與前沿主題 (Specialized & Advanced Topics)
 
 1.  **專門化損失組件**：處理帶噪聲數據、發現多重解、梯度增強正規化 (gPINNs)。
 2.  **決策框架**：如何為您的問題選擇合適的損失策略。
@@ -112,15 +114,16 @@ PINNs-course/
 │   ├── 4.2-Strategy-Adam_and_LBFGS/
 │   │   ├── README.md
 │   │   └── optimization_strategy_example.py
-│   ├── 4.3-Adaptive_Weights-SA-PINN/
+│   ├── 4.3-Variational_Formulation-VPINN/
+│   │   └── README.md
+│   ├── 4.4-Discontinuous_Solutions-cPINN/
 │   │   ├── README.md
-│   │   └── sa_pinn_example.py
-│   ├── 4.4-Variational_Formulation-VPINN/
+│   │   └── cpinn_example.py
+│   ├── 4.5-First_Order_System-FO-PINN/
 │   │   ├── README.md
-│   │   └── vpinn_example.py
-│   └── 4.5-Discontinuous_Solutions-cPINN/
-│       ├── README.md
-│       └── cpinn_example.py
+│   │   └── fo_pinn_example.py
+│   └── 4.6-Bayesian_PINN-BPINN/
+│       └── README.md
 │
 ├── 05-Specialized_and_Frontier_Topics/     # 特殊化與前沿主題
 │   ├── README.md
