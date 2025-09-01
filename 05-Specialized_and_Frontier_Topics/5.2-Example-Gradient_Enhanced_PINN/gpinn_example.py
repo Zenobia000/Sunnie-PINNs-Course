@@ -27,7 +27,7 @@ geom = dde.geometry.Interval(0, 1)
 
 def pde(x, u):
     du_dx = dde.grad.jacobian(u, x, i=0, j=0)
-    return du_dx - np.cos(2 * np.pi * x)
+    return du_dx - dde.backend.cos(2 * np.pi * x)
 
 # Analytical solution and derivative for generating data
 def analytical_solution(x):
@@ -47,7 +47,10 @@ observe_x_grad = np.linspace(0, 1, num_grad_data).reshape(-1, 1)
 observe_grad = analytical_derivative(observe_x_grad)
 
 # 3. Define Data Constraints
-ic = dde.IC(geom, lambda x: 0, lambda _, on_initial: on_initial)
+def boundary(x, on_boundary):
+    return on_boundary and np.isclose(x[0], 0)
+
+bc = dde.DirichletBC(geom, lambda x: 0, boundary)
 
 # Standard PointSetBC for the solution u(x)
 observe_u_bc = dde.PointSetBC(observe_x_u, observe_u, component=0)
@@ -65,7 +68,7 @@ print("--- Training gPINN Model (with gradient data) ---")
 data_gpinn = dde.data.PDE(
     geom,
     pde,
-    [ic, observe_u_bc, observe_grad_bc],  # Include all constraints
+    [bc, observe_u_bc, observe_grad_bc],  # Include all constraints
     num_domain=100,
     num_boundary=2,
     num_test=100
@@ -81,7 +84,7 @@ print("\n--- Training Standard PINN Model (without gradient data) ---")
 data_std = dde.data.PDE(
     geom,
     pde,
-    [ic, observe_u_bc],  # Only use IC and u(x) data
+    [bc, observe_u_bc],  # Only use IC and u(x) data
     num_domain=100,
     num_boundary=2,
     num_test=100
